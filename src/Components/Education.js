@@ -1,0 +1,34 @@
+import React, { Component } from "react";
+import {MDBIcon, MDBBtn, MDBCol, MDBContainer, MDBRow, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBMask, MDBView } from "mdbreact";
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import NavbarC from './Navbar.js';
+
+
+
+class Education extends Component {
+
+
+
+render() {
+    return (
+
+        <div className="second-page" id="id-about"> 
+            <NavbarC />
+                        <h1>Education</h1>
+                        1.>BE Pune University(2021) <br />
+                        2.>12th <br />
+                        3.>10th
+            <div className="sm">
+            <a href="#"><i className="fab fa-facebook-f"></i></a>
+            <a href="#"><i className="fab fa-twitter"></i></a>
+            <a href="#"><i className="fab fa-youtube"></i></a>
+            <a href="#"><i className="fab fa-instagram"></i></a>
+            </div>
+    
+        </div>
+    )
+}
+
+}
+
+export default Education;

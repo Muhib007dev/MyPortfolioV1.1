@@ -1,86 +1,111 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { MDBIcon, MDBBtn, MDBCol, MDBContainer, MDBRow, MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBNavLink, MDBMask, MDBView } from "mdbreact";
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
-export default class Navbar extends Component {
-  scrollToTop = () => {
-    scroll.scrollToTop();
-  };
+import { Button, ButtonToolbar, Navbar, Nav, NavDropdown, Form, FormControl } from 'react-bootstrap';
+
+import { Link as Move, animateScroll as scroll } from "react-scroll";
+
+
+
+
+
+class NavbarC extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      collapse: false,
+      isWideEnough: false,
+    };
+    this.onClick = this.onClick.bind(this);
+  }
+
+  onClick() {
+    this.setState({
+      collapse: !this.state.collapse,
+    });
+  }
+
 
   render() {
     return (
-      <nav className="nav" id="navbar">
-        <div className="nav-content">
-          <img
-            src={logo}
-            className="nav-logo"
-            alt="Logo"
-            onClick={this.scrollToTop}
-          />
-          <ul className="nav-items">
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="section1"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 1
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="section2"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 2
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="section3"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 3
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="section4"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 4
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                activeClass="active"
-                to="section5"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-              >
-                Section 5
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    );
+
+      <div id="here">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <Navbar bg="" variant="dark" style={{ backgroundColor: "black" }} expand="md">
+
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" >
+            <Nav className="mr-auto" >
+
+                <Link to="/about" style={{ color: "white" }}>
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlTV9Lf2TYi2J3s07bUMbLSuC3fW1ZhxaNn5-wpdQ7WefnevOp&s" style={{ width: "30px", height: "30px" }} alt="home" />
+                </Link>
+
+                <Link to="/skills" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Skills</div>
+                </Link>
+
+                <Link to="/projects" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Projects And Programs</div>
+                </Link>
+
+
+                <Link to="/education" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Education</div>
+                </Link>
+
+                <Link to="/Volunteering" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Volunteering</div>
+                </Link>
+
+
+                <Link to="/blog" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Blog</div>
+                </Link>
+
+                <Link to="/achievement" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Achievements</div>
+                </Link>
+
+                <Link to="/resume" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Resume</div>
+                </Link>
+
+
+                <Link to="/contact" style={{ color: "white" }}>
+                  <div className="navanimation" style={{ color: "white" }}>Contact</div>
+                </Link>
+
+
+            </Nav>
+
+          </Navbar.Collapse>
+        </Navbar>
+
+
+
+
+
+
+
+      </div>
+    )
   }
+
 }
+
+export default NavbarC;
